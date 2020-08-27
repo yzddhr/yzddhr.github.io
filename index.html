@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>yzd-log - 一切属于观念</title><meta name="description" content=""><meta name="author" content="yzddhr"><meta name="copyright" content="yzddhr"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="yzd-log"><meta name="twitter:description" content=""><meta name="twitter:image" content="https://yzddhr.ltd/img/avatar.png"><meta property="og:type" content="website"><meta property="og:title" content="yzd-log"><meta property="og:url" content="https://yzddhr.ltd/"><meta property="og:site_name" content="yzd-log"><meta property="og:description" content=""><meta property="og:image" content="https://yzddhr.ltd/img/avatar.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://yzddhr.ltd/"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><link rel="preload" href="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/index.jpg" as="image"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: true,
+  isPost: false
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">yzd-log</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 资源</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fa fa-picture-o"></i><span> Gallery</span></a></li><li><a class="site-page" href="/jilu/"><i class="fa-fw fa fa-pencil-square-o"></i><span> 记录</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/plan/"><i class="fa-fw fa fa-calendar"></i><span> 计划</span></a></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">19</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">5</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">3</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 资源</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fa fa-picture-o"></i><span> Gallery</span></a></li><li><a class="site-page" href="/jilu/"><i class="fa-fw fa fa-pencil-square-o"></i><span> 记录</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/plan/"><i class="fa-fw fa fa-calendar"></i><span> 计划</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><nav class="full_page" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/index.jpg)"><div id="site-info"><div id="site-title"><span class="blogtitle">yzd-log</span></div><div id="site-sub-title"><span class="subtitle"></span></div><div id="site-social-icons"><a class="social-icon" href="https://github.com/jerryc127" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:xxxxxxxx@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a></div></div><div class="scroll-down"><i class="fa fa-angle-down scroll-down-effects"></i></div></nav><main id="content-outer"><div class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item article-container"><div class="post_cover left_radius"><a href="/2020/08/27/hello-world/" title="Hello World"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/im7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/08/27/hello-world/" title="Hello World">Hello World</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-08-27</time><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in  ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover right_radius"><a href="/2020/08/27/yuque/zhong-guo-ren-zhi-di-zhi-li/" title="中国人之低智力"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/im6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="中国人之低智力"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/08/27/yuque/zhong-guo-ren-zhi-di-zhi-li/" title="中国人之低智力">中国人之低智力</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-08-27</time><div class="content">其实,中国是一个科学意义上低智力的民族,打个比方,一次川普演讲中说这地方太热的有 50° 了吧,然后国内媒体把这段截下来,煞有介事的说川普是脑子坏了吧?怎么可能会有 50° 呢?然后小粉红一片叫好,太能反映问题了,幽默感是高智能人群的一个重要特征,因为幽默的本质是对对方逻辑的一种理解内化然后更进一步 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover left_radius"><a href="/2020/06/19/yuque/shi-yong-python-zi-dong-qian-dao-huo-qu-liu-liang/" title="使用python自动签到获取流量"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/im8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用python自动签到获取流量"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/06/19/yuque/shi-yong-python-zi-dong-qian-dao-huo-qu-liu-liang/" title="使用python自动签到获取流量">使用python自动签到获取流量</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-06-19</time><div class="content">
+发现一个 0.5 毛一个月,而且还支持签到流量的机场,美滋滋直接写个脚本每天捞点流量
+
+环境
+Google 浏览器
+chromedriver
+python3
+
+具体服务器环境安装python3
+shell1234567891011121314mkdir /usr/local/python3wget ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover right_radius"><a href="/2020/06/15/yuque/telegram-shi-yong-dai-li/" title="telegram使用代理"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/im10.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="telegram使用代理"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/06/15/yuque/telegram-shi-yong-dai-li/" title="telegram使用代理">telegram使用代理</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-06-15</time><div class="content">具体方式
+v2ray 转 socks5 代理 (有服务器即可,国内的也可)
+MTDPROXY telegram 官方的代理 (需要有主权的国外服务器)
+
+安装第一种脚本在安装 MTProxymtproxy_go.sh
+第二种利用 v2ray 容器当服务端
+
+vmess2json.py
+
+vemss2 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover left_radius"><a href="/2020/06/12/yuque/li-yong-jsproxy-he-cloudflare-da-jian-cn-yong-dai-li/" title="利用jsproxy和cloudflare搭建cn用代理"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/im9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="利用jsproxy和cloudflare搭建cn用代理"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/06/12/yuque/li-yong-jsproxy-he-cloudflare-da-jian-cn-yong-dai-li/" title="利用jsproxy和cloudflare搭建cn用代理">利用jsproxy和cloudflare搭建cn用代理</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-06-12</time><div class="content">
+介绍
+前面的帖子介绍过好用的 cloudflare 的 work 项目
+可以搭建一个中国本地可用的代理
+这个代理是 cloudflare 只发数据,js 的数据操作在浏览器端进行,减少服务端压力
+
+例子
+https://hub.yzddahaoren.workers.dev //你懂的
+https ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover right_radius"><a href="/2020/06/12/yuque/cloudflare-de-work-xiang-mu/" title="cloudflare的work项目"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/im5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cloudflare的work项目"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/06/12/yuque/cloudflare-de-work-xiang-mu/" title="cloudflare的work项目">cloudflare的work项目</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-06-12</time><div class="content">整理好用的 cloudflare 的 work 项目
+
+网盘目录
+GoindexGoindex 修改版，支持多盘、搜索、分页加载等功能。https://github.com/yanzai/goindex
+
+goindex-theme-acrou另一个 Goindex 修改版https://githu ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover left_radius"><a href="/2020/06/11/yuque/zi-dong-pa-qu-tong-ren-yin-sheng-wang-zhan-de-mp3-wen-jian/" title="自动爬取同人音声网站的mp3文件"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/im1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自动爬取同人音声网站的mp3文件"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/06/11/yuque/zi-dong-pa-qu-tong-ren-yin-sheng-wang-zhan-de-mp3-wen-jian/" title="自动爬取同人音声网站的mp3文件">自动爬取同人音声网站的mp3文件</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-06-11</time><div class="content">介绍最近发现了一个外国人搭建的同人音声网站 https://japaneseasmr.com ,admin 每天更新,遂爬之但是还是不要太过分,看更新的频率应该不是脚本更新.
+环境和工具
+使用 IDM 破解版,因为直接就有方便
+v2ray 代理,你懂的原因
+
+前期准备
+IDM 设置代理下载(服务器在 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover right_radius"><a href="/2020/06/10/yuque/da-jian-mian-fei-de-dai-li/" title="搭建免费的代理"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/im12.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="搭建免费的代理"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/06/10/yuque/da-jian-mian-fei-de-dai-li/" title="搭建免费的代理">搭建免费的代理</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-06-10</time><div class="content">环境和工具
+goproxy
+heroku
+
+介绍
+goproxy 使用 go 语言的代理软件,方便使用
+hroku 老牌的 AWS 网站,坚持的时间长
+项目地址: https://github.com/snail007/goproxy-heroku
+
+具体
+登陆https://dashboard.h ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover left_radius"><a href="/2020/06/10/yuque/ru-he-yue-du-yi-ben-shu/" title="如何阅读一本书"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/im3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何阅读一本书"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/06/10/yuque/ru-he-yue-du-yi-ben-shu/" title="如何阅读一本书">如何阅读一本书</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-06-10</time><div class="content">读书笔记
+具体第一章 (前提准备)1、先看书名和序，我们会收获本书的主题思想。2、研究目录页与索引，收获作者想说明的内容。3、作者介绍4、以翻书的方式阅读，得到主要论点5、重视结尾的两三页及后记，因为结尾作者观点会较突出。6、读书时集中精力，保持敏感度，跟着作者的思路走，做白日梦会让我们觉得书晦涩难 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover right_radius"><a href="/2020/06/09/yuque/da-jian-pin-cong-lun-tan-docker/" title="搭建品葱论坛-docker"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/im6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="搭建品葱论坛-docker"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/06/09/yuque/da-jian-pin-cong-lun-tan-docker/" title="搭建品葱论坛-docker">搭建品葱论坛-docker</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-06-09</time><div class="content">简介
+品葱论坛本来是仿照知乎搭建的论坛，现在已沦为（颜色）蛆乱骂之地
+还是挺方便的自己搭建一个自己用
+PS : 语雀会员的领取 https://51.ruyo.net/15979.html
+
+环境
+安装 docker
+安装 docker-compose
+
+shell12345678#安装Docker ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-fw fa-chevron-right" aria-hidden="true"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"><div class="author-info__name">yzddhr</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length_num">19</div></a></div><div class="card-info-data-item is-center">      <a href="/tags/"><div class="headline">标签</div><div class="length_num">5</div></a></div><div class="card-info-data-item is-center">     <a href="/categories/"><div class="headline">分类</div><div class="length_num">3</div></a></div></div><div class="card-info-bookmark is-center"><a class="bookmark button--primary button--animated" id="bookmark-it" href="javascript:;" title="加入书签" target="_self"><i class="fa fa-bookmark" aria-hidden="true"></i><span>加入书签</span></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/jerryc127" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:xxxxxxxx@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fa fa-bullhorn card-announcement-animation" aria-hidden="true"></i><span>公告</span></div><div class="announcement_content">欢迎访问，喜欢收藏哦~  ^_^</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fa fa-history" aria-hidden="true"></i><span>最新文章</span></div><div class="aside-recent-item"> <div class="aside-recent-post"><a href="/2020/08/27/hello-world/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/im7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Hello World" alt="Hello World"></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/08/27/hello-world/" title="Hello World">Hello World</div><time class="aside-post_meta post-meta__date">2020-08-27</time></div></a></div><div class="aside-recent-post"><a href="/2020/08/27/yuque/zhong-guo-ren-zhi-di-zhi-li/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/im6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="中国人之低智力" alt="中国人之低智力"></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/08/27/yuque/zhong-guo-ren-zhi-di-zhi-li/" title="中国人之低智力">中国人之低智力</div><time class="aside-post_meta post-meta__date">2020-08-27</time></div></a></div><div class="aside-recent-post"><a href="/2020/06/19/yuque/shi-yong-python-zi-dong-qian-dao-huo-qu-liu-liang/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/im8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="使用python自动签到获取流量" alt="使用python自动签到获取流量"></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/06/19/yuque/shi-yong-python-zi-dong-qian-dao-huo-qu-liu-liang/" title="使用python自动签到获取流量">使用python自动签到获取流量</div><time class="aside-post_meta post-meta__date">2020-06-19</time></div></a></div><div class="aside-recent-post"><a href="/2020/06/15/yuque/telegram-shi-yong-dai-li/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/im10.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="telegram使用代理" alt="telegram使用代理"></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/06/15/yuque/telegram-shi-yong-dai-li/" title="telegram使用代理">telegram使用代理</div><time class="aside-post_meta post-meta__date">2020-06-15</time></div></a></div><div class="aside-recent-post"><a href="/2020/06/12/yuque/li-yong-jsproxy-he-cloudflare-da-jian-cn-yong-dai-li/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/im9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="利用jsproxy和cloudflare搭建cn用代理" alt="利用jsproxy和cloudflare搭建cn用代理"></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/06/12/yuque/li-yong-jsproxy-he-cloudflare-da-jian-cn-yong-dai-li/" title="利用jsproxy和cloudflare搭建cn用代理">利用jsproxy和cloudflare搭建cn用代理</div><time class="aside-post_meta post-meta__date">2020-06-12</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fa fa-folder-open" aria-hidden="true"></i><span>分类</span></div><ul class="aside-category-item">       <li class="aside-category-list"><a class="aside-category-list_link" href="/categories/%E5%B7%A5%E5%85%B7/"><span class="aside-category-list_name">工具</span><span class="aside-category-list_length">1</span></a></li><li class="aside-category-list"><a class="aside-category-list_link" href="/categories/%E6%8A%80%E6%9C%AF/"><span class="aside-category-list_name">技术</span><span class="aside-category-list_length">3</span></a></li><li class="aside-category-list"><a class="aside-category-list_link" href="/categories/%E7%94%9F%E5%AD%98/"><span class="aside-category-list_name">生存</span><span class="aside-category-list_length">3</span></a></li></ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fa fa-tags" aria-hidden="true"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 16px; color: #999">内网穿透</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 16px; color: #999">工具</a> <a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 24px; color: #99a9bf">技术</a> <a href="/tags/%E6%97%B6%E9%97%B4/" style="font-size: 16px; color: #999">时间</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 24px; color: #99a9bf">杂谈</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fa fa-archive" aria-hidden="true"></i><span>归档</span></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/"><span class="archive-list-date">2020年08月</span><span class="archive-list-count">2</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/"><span class="archive-list-date">2020年06月</span><span class="archive-list-count">10</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/"><span class="archive-list-date">2020年04月</span><span class="archive-list-count">1</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/"><span class="archive-list-date">2020年03月</span><span class="archive-list-count">6</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fa fa-line-chart" aria-hidden="true"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">19</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" start_date="3/10/2020 00:00:00">     </div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://cdn.jsdelivr.net/gh/yzddhr/cdn@1.0/image/index.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 By yzddhr</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://www.yzddhr.ltd/" target="_blank" rel="noopener">blog</a>!</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script id="ribbon_piao" mobile="false" src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/piao.js"></script><script src="https://cdn.jsdelivr.net/npm/activate-power-mode/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false; 
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script><script src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/click_heart.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script><script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script><script>fetch('https://api.ooopn.com/ciba/api.php',)
+.then(function (res){
+  return res.json();
+})
+.then(function (data) {
+  var sub = '今日事&#44;今日畢,Never put off till tomorrow what you can do today'.length == 0  ? new Array() : '今日事&#44;今日畢,Never put off till tomorrow what you can do today'.split(",");
+  var both = sub.unshift(data['ciba-en'],data.ciba)
+  var typed = new Typed(".subtitle", {
+  strings: sub,
+  startDelay: 300,
+  typeSpeed: 100,
+  loop: true,
+  backSpeed: 50
+  });
+})
+.catch(function (err) {
+  console.error(err);
+})</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
